@@ -61,8 +61,8 @@ class MainActivity : AppCompatActivity() {
 
         }
         findViewById<Button>(R.id.silnia).setOnClickListener {
-            val x=findViewById<EditText>(R.id.wprowadz)
-            val y=x.text.toString().toInt()
+            val z=findViewById<EditText>(R.id.wprowadz)
+            val y=z.text.toString().toInt()
             val wynik= silnia(y).toString()
             findViewById<TextView>(R.id.wynik).text=wynik
         }
