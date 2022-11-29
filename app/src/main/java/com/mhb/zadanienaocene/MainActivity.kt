@@ -8,12 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 
 fun silnia(liczba: Int): Int{
-    if(liczba>1){
+    if(liczba in 1..10 ){
         return liczba * silnia(liczba-1)
     }
-    else{
-        return 0
-    }
+        return 1
 }
 
 
@@ -24,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var i=1
+
             findViewById<Button>(R.id.prawo).setOnClickListener {
                 i+=1
                 if(i==1) {
@@ -36,16 +35,19 @@ class MainActivity : AppCompatActivity() {
 
                 if(i==3) {
                     findViewById<ImageView>(R.id.zdjecie).setImageResource(R.drawable.gruszki)
-                    i=0
+
+                }
+                if(i==4){
+                    findViewById<ImageView>(R.id.zdjecie).setImageResource(R.drawable.truskawka)
+                    i=1
                 }
 
 
             }
+
         findViewById<Button>(R.id.lewo).setOnClickListener {
             i-=1
-            if(i<=0){
-                i=3
-            }
+
             if(i==1) {
                 findViewById<ImageView>(R.id.zdjecie).setImageResource(R.drawable.truskawka)
             }
@@ -56,6 +58,10 @@ class MainActivity : AppCompatActivity() {
 
             if(i==3) {
                 findViewById<ImageView>(R.id.zdjecie).setImageResource(R.drawable.gruszki)
+            }
+            if(i==0){
+                findViewById<ImageView>(R.id.zdjecie).setImageResource(R.drawable.gruszki)
+                i=3
             }
 
 
